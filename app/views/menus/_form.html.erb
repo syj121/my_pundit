@@ -1,0 +1,20 @@
+<%= form_for @menu, class: "" do |f| %>
+	<!-- 菜单名是展示在前台页面上的 -->
+	菜单名：<%= f.text_field :name %>
+	<!-- 关联系统菜单，是这个用户所有的系统权限菜单。 -->
+	关联系统菜单：<%= f.select :controller_name, @menus%>
+	<!-- 选择权限，是这个用户，在这个系统菜单下，所能分配到的权限组 -->
+	选择权限：<div id="pundit_groups"><%= render "pundit_groups"%></div>
+	<%= submit_tag "提交"%>
+<% end %>
+
+<script type="text/javascript">
+	//当修改了关联菜单，修改对应的权限组
+	$("#menu_controller_name").click(function(){
+		$.ajax({
+			type: "get",
+			data: {controller_name: $("#controller_name").val()},
+			url: "/menus/pundit_groups"
+		})
+	})
+</script>

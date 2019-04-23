@@ -1,0 +1,4 @@
+<!-- 某个菜单的权限组 -->
+<% @pundit_groups.each do |auth_group|%>
+	<%= check_box_tag :pundit_groups, auth_group.group_name%>
+<% end if @pundit_groups.present? %>

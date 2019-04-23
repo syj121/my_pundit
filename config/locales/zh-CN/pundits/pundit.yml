@@ -1,0 +1,6 @@
+zh-CN:
+  activerecord:
+    models:
+      menus: 菜单管理
+      roles: 权限管理
+      users: 用户管理

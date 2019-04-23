@@ -1,0 +1,6 @@
+<%= form_tag save_menus_role_path(@role), method: :post do %>
+	<% @menus.each do |menu|%>
+		<%= menu.name%>：<%= check_box_tag :menus, menu.id %>
+	<% end %>
+	<%= submit_tag :submit%>
+<% end %>

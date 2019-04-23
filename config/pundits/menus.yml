@@ -1,0 +1,13 @@
+---
+menus:
+  pundit_name: menus
+  pundit_groups:
+    create:
+      pundit_name: show
+      pundits: new, create
+    show:
+      pundit_name: show
+      pundits: show, index
+    destroy:
+      pundit_name: destroy
+      pundits: destroy

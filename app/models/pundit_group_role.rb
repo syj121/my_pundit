@@ -1,0 +1,2 @@
+class PunditGroupRole < ApplicationRecord
+end

@@ -1,0 +1,13 @@
+<%= form_tag save_pundit_groups_role_path(@role) do %>
+	<% @menus.each do |menu|%>
+		<div>
+			<div><%= menu[:menu_name]%>权限：</div>
+			<div>
+				<% menu[:pundit_groups].each do |pundit_group|%>
+					<%= pundit_group[:pundit_group_name] %>：<%= check_box_tag "pundit_groups[#{menu[:menu_id]}][]", pundit_group[:pundit_group_id]%>
+				<% end%>
+			</div>
+		</div>
+	<% end %>
+	<%= submit_tag :submit%>
+<% end %>
